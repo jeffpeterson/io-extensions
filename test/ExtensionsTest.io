@@ -7,27 +7,21 @@ describe(Extensions,
   assert(table["1"] == 2)
   assert(table["3"] == 4)
 
-  assert(1 || 2 == 1)
-  assert(nil || 2 == 2)
+  assert((1 || 2) == 1)
+  assert((nil || 2) == 2)
   assert((1 && 2) == 2)
   assert((nil && 2) == nil)
+  assert((1 && nil) == nil)
 
-  describe(orEquals,
-    x := 1
-    assert(x == 1)
-    x ||= 2
-    assert(x == 1)))
+  describe(orUpdateSlot,
+    x := "first"
+    assert(x == "first")
+    x ||= "sec"
+    assert(x == "first")
+    assert((x ||= "sec") == "first"))
 
-// {1 -> 2, 3 -> 4}
-// list(1,2)
-// [1, 2][2]
-
-// x = z && y
-
-// llist(x, y) <- list(1,2)
-// if := method()
-
-// x match(
-//   5 => println,
-
-// )
+  describe(orSetSlot,
+    x ||:= "first"
+    y ||:= x
+    assert(x == "first")
+    assert((x ||:= "sec") == "first")))
