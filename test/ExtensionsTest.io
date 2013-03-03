@@ -13,6 +13,14 @@ describe(Extensions,
   assert((nil && 2) == nil)
   assert((1 && nil) == nil)
 
+  assert((false && true) == false)
+  assert((true || false) == true)
+  assert((true or false) == true)
+
+  assert((true && 1) == 1)
+  assert((true and 1) == 1)
+  assert(if(false || true))
+
   describe(orUpdateSlot,
     x := "first"
     assert(x == "first")

@@ -25,17 +25,25 @@ map[3] // Throws Exception
 map["3"] //=> "c"
 ```
 
-`||` and `&&` work on objects:
+You can use `||` and `&&` in place of `or` and `and`:
+
+```io
+if(false || true, "hi") //=> "hi"
+if(true  && true, "hi") //=> "hi"
+```
+
+`||` and `&&` (and `or` and `and`) work on objects:
 
 ```io
 nil || 5 //=> 5
-5 || nil //=> 5
+5 or nil //=> 5
 
 5 && nil //=> nil
-5 && 6   //=> 6
+5 and 6  //=> 6
 ```
 
 Assignment too:
+
 ```io
 x := nil
 x ||= "first"
